@@ -1,9 +1,9 @@
-# Set up Guide
+# Setup Neo
 
 This document will teach you how to setup your development environment, Cloud Foundry landscape and how to deploy and alter the used Java Backend.
 
 * [Set up Neo for Mobile Services](#setupneo)
-* [Clone the Fiori-for-iOS-Roadshow-19 repository](#clonerepo)
+* [Clone the cloud-mobile-sample-servers repository](#clonerepo)
 * [Deploy the Java Backend to Neo](#deployapp)
 
 <a name="setupneo"/>
@@ -15,7 +15,9 @@ Please complete the following tutorials in the [Set Up the SAP Cloud Platform SD
 1. [Enable SAP Cloud Platform Mobile Services](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html)
 2. [Configure Mobile Services in iOS Assistant](https://developers.sap.com/tutorials/fiori-ios-scpms-configure-ms-assistant.html)
 
-## Clone the Fiori-for-iOS-Roadshow-19 repository
+<a name="clonerepo"/>
+
+## Clone the cloud-mobile-sample-servers repository
 In order to get the sample backends you should clone the repository to your machine. Why cloning the repository instead of downloading it as ZIP? - If you clone the repository rather then just downloading it as ZIP gives you the advantage that you can pull future changes directly without re-downloading the repository as ZIP.
 
 > If you don't have Git installed on your MacBook please follow the instructions on the official [Git Homepage](https://git-scm.com/book/en/v1/Getting-Started-Installing-Git).
@@ -33,36 +35,37 @@ You will find the following folders:
 Now that you have the Java Backends handy we will go ahead an deploy it on the NEO landscape.
 
 Please go back and login to your [SAP Cloud Platform](https://account.hanatrial.ondemand.com/) account. There please select **Neo** as your landscape.
-![deploy-1](https://github.wdf.sap.corp/storage/user/16334/files/23b29480-823e-11e9-8380-6710eb5bc6bb)
+
+![deploy-1](https://user-images.githubusercontent.com/9074514/58994032-16e4f200-87a4-11e9-92cc-0324d20874e5.png)
 
 On the left hand side you will see **Applications** if you expand it now select **Java Applications**. You should see the following screen showing up.
 
-![deploy-2](https://github.wdf.sap.corp/storage/user/16334/files/257c5800-823e-11e9-9a26-30a9bb795ddb)
+![deploy-2](https://user-images.githubusercontent.com/9074514/58994033-177d8880-87a4-11e9-98d1-6c2f2e5fa46d.png)
 
 Now click on **Deploy Application**. In the upcoming screen please brows for the WAR you want to deploy. Also select **Java Web Tomcat 8** as **Runtime Name**.
 
-![deploy-3](https://github.wdf.sap.corp/storage/user/16334/files/26ad8500-823e-11e9-8219-77276e6f077e)
+![deploy-3](https://user-images.githubusercontent.com/9074514/58994034-177d8880-87a4-11e9-9ee6-7f84228dea49.png)
 
 Click on **Deploy**.
 
 The following screen should show up where you have the option to start the Java Application the WAR was deployed succesfully.
 
-![deploy-4](https://github.wdf.sap.corp/storage/user/16334/files/27deb200-823e-11e9-9b2d-15987c4242ce)
+![deploy-4](https://user-images.githubusercontent.com/9074514/58994035-177d8880-87a4-11e9-8a0a-b40ceaba7f20.png)
 
 If the application was started successfully you should see something similiar like this.
 
-![deploy-5](https://github.wdf.sap.corp/storage/user/16334/files/29a87580-823e-11e9-8805-6b6230778beb)
+![deploy-5](https://user-images.githubusercontent.com/9074514/58994036-177d8880-87a4-11e9-8897-c0cb3581d411.png)
 
 Click now on the application name to see the **Application URLs**.
 
-![deploy-6](https://github.wdf.sap.corp/storage/user/16334/files/2b723900-823e-11e9-95dd-ef1b5e9154e9)
+![deploy-6](https://user-images.githubusercontent.com/9074514/58994037-177d8880-87a4-11e9-8e26-3dd450b91a30.png)
 
 To open the service in your browser click the shown URL. You should see the service document now.
 
-![deploy-7](https://github.wdf.sap.corp/storage/user/16334/files/2f05c000-823e-11e9-9509-5e5b3bbd5a8e)
+![deploy-7](https://user-images.githubusercontent.com/9074514/58994038-177d8880-87a4-11e9-9269-10c56e613036.png)
 
 In the url you can add **/$metadata** to see the metadata definition of the OData Service.
 
-![deploy-8](https://github.wdf.sap.corp/storage/user/16334/files/3200b080-823e-11e9-8230-b746c7efee77)
+![deploy-8](https://user-images.githubusercontent.com/9074514/58994621-0766a880-87a6-11e9-94b0-6a4c8c633aa6.png)
 
 You now have succesfully deployed your Java Backend application!
