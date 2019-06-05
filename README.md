@@ -29,7 +29,7 @@ The requirements to follow the exercises in this repository, including hardware 
 
 ## Download and installation
 
-To use the Project Book it is necessary to deploy the backend in your SAP Cloud Platform account. Currently only Neo deployments are supported as of this writing. The steps are described in the [Deploy Backend Neo](Backends/Deployment%20Guide%20Neo.md) file.
+To use the Project Book it is necessary to deploy the backend in your SAP Cloud Platform account. Currently only Neo deployments are supported as of this writing. The steps are described in the [Setup Neo](Backends/Setup%20Neo.md) file.
 
 
 ## How to obtain support
