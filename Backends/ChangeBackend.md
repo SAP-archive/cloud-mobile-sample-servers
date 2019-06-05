@@ -64,28 +64,17 @@ You will see different mobile project templates, select the **Mobile OData Servi
 
 ![createproject-4](https://user-images.githubusercontent.com/9074514/57008010-cd502880-6ba1-11e9-9b69-c402ddfda36b.png)
 
-Enter the following information as **Project Name**:
+Fill out the fields and click on **Next**.
 
-Property | Value
--------- | ---------
-Project Name | iOSWorkshop2019
+Fill out the fields as you wish but make sure you select **Neo** as **Deployment Target** and **Authentication Method** is **None**.
 
-Click on **Next**
-
-Now enter the following information in the form:
-
-Property | Value
--------- | --------
-Service App Name | TravelExpense
-Service App Version | 0.1.0
-Deployment Target | Cloud Foundry
-Authentication Method | NONE
+> NOTE: If you want to play around with different authentication methods or want to deploy to Cloud Foundry, you could change those values.
 
 Make sure **Use in-memory database (for testing only)** is selected and **Use generated test data** is checked. Click on **Finish**
 
 ![createproject-5](https://user-images.githubusercontent.com/9074514/57008012-d0e3af80-6ba1-11e9-8dc2-4d2ee3b26f22.png)
 
-You will now see the **iOSWorkshop2019** project appear in your workspace.
+You will now see your project appear in your workspace.
 
 <a name="importcsdl">
 
@@ -157,14 +146,7 @@ Right click on the **initial-data** folder and click on **Import -> File or Proj
 
 ![importsampledata-1](https://user-images.githubusercontent.com/9074514/57008527-a693f100-6ba5-11e9-9d6f-19cc8e95e203.png)
 
-Start importing the sample data sets from the repository. The sets are:
-
-* ReportStatusSet
-* ReportSet
-* PaymentTypeSet
-* ExpenseTypeSet
-* ExpenseSet
-* CurrencySet
+You can look into the Readme for information on how to create your own sample data. This project will automatically contain initial data.
 
 ![importsampledata-2](https://user-images.githubusercontent.com/9074514/57008531-ab58a500-6ba5-11e9-9a08-fecce91f7a5e.png)
 
