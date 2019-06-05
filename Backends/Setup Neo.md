@@ -32,7 +32,7 @@ You will find the following folders:
 <a name="deployapp"/>
 
 ## Deploy the Java Backend to Neo
-Now that you have the Java Backends handy we will go ahead an deploy it on the NEO landscape.
+The actual WAR files are available under the [Release](https://github.com/SAP-samples/cloud-mobile-sample-servers/releases) tab on GitHub. No we can go ahead an deploy a backend on the NEO landscape.
 
 Please go back and login to your [SAP Cloud Platform](https://account.hanatrial.ondemand.com/) account. There please select **Neo** as your landscape.
 
