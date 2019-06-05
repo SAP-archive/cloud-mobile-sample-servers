@@ -1,0 +1,74 @@
+[
+    {
+        "FlightID": "601",
+        "aircraftReg": "D-AIHW",
+        "aircraftType": "Airbus A340",
+        "arrival": "2019-03-01T01:17:42.063",
+        "code": "LH454",
+        "departure": "2019-03-01T01:20:42.063",
+        "duration": "12",
+        "fromAirportID": "101",
+        "remarks": "Normal Flight - No issues",
+        "toAirportID": "102"
+    },
+    {
+        "FlightID": "602",
+        "aircraftReg": "D-AIHW",
+        "aircraftType": "Airbus A340",
+        "arrival": "2019-03-01T01:17:42.063",
+        "code": "LH455",
+        "departure": "2019-03-01T01:20:42.063",
+        "duration": "12",
+        "fromAirportID": "102",
+        "remarks": "Back to base",
+        "toAirportID": "101"
+    },
+    {
+        "FlightID": "603",
+        "aircraftReg": "D-AIUI",
+        "aircraftType": "Airbus A320",
+        "arrival": "2019-04-01T01:08:42.063",
+        "code": "LH900",
+        "departure": "2019-04-01T01:10:42.063",
+        "duration": "1",
+        "fromAirportID": "101",
+        "remarks": "On a short hall for a change",
+        "toAirportID": "103"
+    },
+    {
+        "FlightID": "604",
+        "aircraftReg": "D-AIUI",
+        "aircraftType": "Airbus A320",
+        "arrival": "2019-04-01T01:08:42.063",
+        "code": "LH901",
+        "departure": "2019-04-01T01:10:42.063",
+        "duration": "1",
+        "fromAirportID": "103",
+        "remarks": "Back to base",
+        "toAirportID": "101"
+    },
+    {
+        "FlightID": "605",
+        "aircraftReg": "D-AIMK",
+        "aircraftType": "Airbus A380",
+        "arrival": "2019-04-01T01:08:42.063",
+        "code": "LH778",
+        "departure": "2019-04-01T01:10:42.063",
+        "duration": "12",
+        "fromAirportID": "101",
+        "remarks": "Flying the Biggest around",
+        "toAirportID": "104"
+    },
+    {
+        "FlightID": "606",
+        "aircraftReg": "D-AIMK",
+        "aircraftType": "Airbus A380",
+        "arrival": "2019-04-01T01:08:42.063",
+        "code": "LH779",
+        "departure": "2019-04-01T01:10:42.063",
+        "duration": "12",
+        "fromAirportID": "104",
+        "remarks": "Flying the Biggest back home",
+        "toAirportID": "101"
+    }
+]

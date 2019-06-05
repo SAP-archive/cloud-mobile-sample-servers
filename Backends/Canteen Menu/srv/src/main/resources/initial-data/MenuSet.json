@@ -1,0 +1,38 @@
+[
+	{
+        "CanteenID": "101",
+        "Dessert": "Chocolate Mousse",
+        "MainDish": "Tacos",
+        "MenuID": "201",
+        "Sides": "Rice, Beans",
+        "Soup": "Chicken",
+        "Vegan": false,
+        "Vegetarian": false,
+        "dateOfLunch": "2019-03-01T20:08:43.871Z",
+        "kcalForMain": 529
+    },
+    {
+        "CanteenID": "101",
+        "Dessert": "Vegan Apple Mousse",
+        "MainDish": "Pumpkin Risotto",
+        "MenuID": "202",
+        "Sides": "Baguette",
+        "Soup": "Vegetable",
+        "Vegan": true,
+        "Vegetarian": null,
+        "dateOfLunch": "2019-03-01T20:08:43.871Z",
+        "kcalForMain": 480
+    },
+	{
+        "CanteenID": "102",
+        "Dessert": null,
+        "MainDish": "Schnitzel & Pommes",
+        "MenuID": "203",
+        "Sides": "Spätzle, Bohnen",
+        "Soup": "Leberknödelsuppe",
+        "Vegan": false,
+        "Vegetarian": false,
+        "dateOfLunch": "2019-03-01T20:08:43.871Z",
+        "kcalForMain": 1021
+    }
+]

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:edmx4="http://docs.oasis-open.org/odata/ns/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx4:Reference Uri="vocabularies/com.sap.cloud.server.odata.sql.v1.xml">
+        <edmx4:Include Namespace="com.sap.cloud.server.odata.sql.v1" Alias="SQL"/>
+    </edmx4:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="com.sap.backend.flightinfo" Alias="flightinfo" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Airport">
+                <Key>
+                    <PropertyRef Name="AirportID"/>
+                </Key>
+                <Property Name="AirportID" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="iataCode" Type="Edm.String" Nullable="false" MaxLength="6"/>
+                <Property Name="latitude" Type="Edm.Decimal" Nullable="false" Precision="10" Scale="2"/>
+                <Property Name="longitude" Type="Edm.Decimal" Nullable="false" Precision="10" Scale="2"/>
+                <Property Name="name" Type="Edm.String" Nullable="false" MaxLength="256"/>
+                <NavigationProperty Name="arrivingFlights" Relationship="flightinfo.Flight_to_Destination" FromRole="AirportPrincipal" ToRole="FlightDependent"/>
+                <NavigationProperty Name="departingFlights" Relationship="flightinfo.Flight_to_Origin" FromRole="AirportPrincipal" ToRole="FlightDependent"/>
+            </EntityType>
+            <EntityType Name="Flight">
+                <Key>
+                    <PropertyRef Name="FlightID"/>
+                </Key>
+                <Property Name="FlightID" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="aircraftReg" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="aircraftType" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="arrival" Type="Edm.DateTime" Nullable="false" sap:display-format="Date"/>
+                <Property Name="code" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="departure" Type="Edm.DateTime" Nullable="false" sap:display-format="Date"/>
+                <Property Name="duration" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="fromAirportID" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="remarks" Type="Edm.String" Nullable="true" MaxLength="256"/>
+                <Property Name="toAirportID" Type="Edm.Int64" Nullable="false"/>
+                <NavigationProperty Name="destination" Relationship="flightinfo.Flight_to_Destination" FromRole="FlightDependent" ToRole="AirportPrincipal"/>
+                <NavigationProperty Name="origin" Relationship="flightinfo.Flight_to_Origin" FromRole="FlightDependent" ToRole="AirportPrincipal"/>
+            </EntityType>
+            <Association Name="Flight_to_Destination">
+                <End Type="flightinfo.Flight" Multiplicity="*" Role="FlightDependent"/>
+                <End Type="flightinfo.Airport" Multiplicity="1" Role="AirportPrincipal"/>
+                <ReferentialConstraint>
+                    <Principal Role="AirportPrincipal">
+                        <PropertyRef Name="AirportID"/>
+                    </Principal>
+                    <Dependent Role="FlightDependent">
+                        <PropertyRef Name="toAirportID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Flight_to_Origin">
+                <End Type="flightinfo.Flight" Multiplicity="*" Role="FlightDependent"/>
+                <End Type="flightinfo.Airport" Multiplicity="1" Role="AirportPrincipal"/>
+                <ReferentialConstraint>
+                    <Principal Role="AirportPrincipal">
+                        <PropertyRef Name="AirportID"/>
+                    </Principal>
+                    <Dependent Role="FlightDependent">
+                        <PropertyRef Name="fromAirportID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="FlightinfoService" m:IsDefaultEntityContainer="true">
+                <Annotation Term="SQL.TrackChanges" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+                <EntitySet Name="AirportSet" EntityType="flightinfo.Airport"/>
+                <EntitySet Name="FlightSet" EntityType="flightinfo.Flight"/>
+                <AssociationSet Name="FlightSet_to_AirportSet" Association="flightinfo.Flight_to_Destination">
+                    <End EntitySet="FlightSet" Role="FlightDependent"/>
+                    <End EntitySet="AirportSet" Role="AirportPrincipal"/>
+                </AssociationSet>
+                <AssociationSet Name="FlightSet_to_Origin" Association="flightinfo.Flight_to_Origin">
+                    <End EntitySet="FlightSet" Role="FlightDependent"/>
+                    <End EntitySet="AirportSet" Role="AirportPrincipal"/>
+                </AssociationSet>
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

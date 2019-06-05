@@ -1,0 +1,72 @@
+[
+    {
+    	"AirportID": "101",
+        "iataCode": "FRA",
+        "latitude": "50.1109",
+        "longitude": "8.6821",
+        "name": "Frankfurt International"
+    },
+    {
+        "AirportID": "102",
+        "iataCode": "SFO",
+        "latitude": "37.7749",
+        "longitude": "122.4194",
+        "name": "San Francisco International"
+    },
+    {
+        "AirportID": "103",
+        "iataCode": "LHR",
+        "latitude": "51.4700",
+        "longitude": "0.4543",
+        "name": "London Heathrow"
+    },
+    {
+        "AirportID": "104",
+        "iataCode": "SIN",
+        "latitude": "1.3644",
+        "longitude": "103.9915",
+        "name": "Changi Singapore"
+    },
+    {
+        "AirportID": "105",
+        "iataCode": "BCN",
+        "latitude": "41.2974",
+        "longitude": "2.0833",
+        "name": "Barcelona–El Prat"
+    },
+    {
+        "AirportID": "106",
+        "iataCode": "BOS",
+        "latitude": "42.3656",
+        "longitude": "71.0096",
+        "name": "Boston Logan International"
+    },
+    {
+        "AirportID": "107",
+        "iataCode": "CDG",
+        "latitude": "49.0097",
+        "longitude": "2.5479",
+        "name": "Charles de Gaulle"
+    },
+    {
+        "AirportID": "108",
+        "iataCode": "YYZ",
+        "latitude": "43.6777",
+        "longitude": "79.6248",
+        "name": "Toronto Pearson International"
+    },
+    {
+        "AirportID": "109",
+        "iataCode": "MUC",
+        "latitude": "48.3537",
+        "longitude": "11.7750",
+        "name": "Munich International"
+    },
+    {
+        "AirportID": "110",
+        "iataCode": "SJC",
+        "latitude": "37.3639",
+        "longitude": "121.9289",
+        "name": "Norman Y. Mineta San Jose International"
+    }
+]

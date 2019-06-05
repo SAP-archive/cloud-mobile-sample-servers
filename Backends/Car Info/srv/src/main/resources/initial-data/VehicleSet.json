@@ -1,0 +1,37 @@
+[
+    {
+    	"VehicleID": "201",
+        "description": "Kevin's Car",
+        "reg": "7RHN45K",
+        "startDate": "2019-03-01T01:17:42.064",
+        "startOdo": "31500.00"
+    },
+    {
+    	"VehicleID": "202",
+        "description": "Ian's Car",
+        "reg": "B563HY",
+        "startDate": "2019-03-01T01:17:42.064",
+        "startOdo": "56341.00"
+    },
+    {
+    	"VehicleID": "203",
+        "description": "Batman's Car",
+        "reg": "BAT1",
+        "startDate": "2019-03-01T01:17:42.064",
+        "startOdo": "10000.00"
+    },
+    {
+    	"VehicleID": "204",
+        "description": "DelBoy's Car",
+        "reg": "TR0TT3R",
+        "startDate": "2019-03-01T01:17:42.064",
+        "startOdo": "100000.00"
+    },
+    {
+    	"VehicleID": "205",
+        "description": "Craig's Car",
+        "reg": "CM3H1L",
+        "startDate": "2019-03-01T01:17:42.064",
+        "startOdo": "2000.00"
+    }
+]

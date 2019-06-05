@@ -1,0 +1,12 @@
+[
+    {
+        "CanteenID": "101",
+        "Location": "Palo Alto",
+        "Name": "Cafe 1"
+    },
+    {
+        "CanteenID": "102",
+        "Location": "Walldorf",
+        "Name": "Canteen 21"
+    }
+]

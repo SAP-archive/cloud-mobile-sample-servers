@@ -1,0 +1,35 @@
+[
+    {
+    	"ReadingID": "101",
+        "VehicleID": "201",
+        "fillCost": "55.48",
+        "fillDate": "2019-03-01T01:17:42.063",
+        "fillFuel": "30",
+        "odometer": "32000"
+        
+    },
+    {
+    	"ReadingID": "102",
+        "VehicleID": "202",
+        "fillCost": "47.00",
+        "fillDate": "2019-03-01T01:17:42.063",
+        "fillFuel": "39.20",
+        "odometer": "56711"
+    },
+    {
+    	"ReadingID": "103",
+        "VehicleID": "205",
+        "fillCost": "30.00",
+        "fillDate": "2019-03-01T01:17:42.063",
+        "fillFuel": "29.00",
+        "odometer": "2300"
+    },
+    {
+    	"ReadingID": "104",
+        "VehicleID": "203",
+        "fillCost": "17.00",
+        "fillDate": "2019-03-01T01:17:42.063",
+        "fillFuel": "17.20",
+        "odometer": "10175"
+    }
+]

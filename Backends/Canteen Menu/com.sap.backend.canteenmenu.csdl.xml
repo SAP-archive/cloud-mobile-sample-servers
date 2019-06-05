@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:edmx4="http://docs.oasis-open.org/odata/ns/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="com.sap.backend.canteenmenu" Alias="canteen_menu" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Canteen">
+                <Key>
+                    <PropertyRef Name="CanteenID"/>
+                </Key>
+                <Property Name="CanteenID" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="Location" Type="Edm.String" Nullable="false" MaxLength="100"/>
+                <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="100"/>
+                <NavigationProperty Name="menues" Relationship="canteen_menu.Menu_to_Canteen" FromRole="CanteenPrincipal" ToRole="MenuDependent"/>
+            </EntityType>
+            <EntityType Name="Menu">
+                <Key>
+                    <PropertyRef Name="MenuID"/>
+                </Key>
+                <Property Name="CanteenID" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="Dessert" Type="Edm.String" Nullable="true" MaxLength="100"/>
+                <Property Name="MainDish" Type="Edm.String" Nullable="false" MaxLength="100"/>
+                <Property Name="MenuID" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="Sides" Type="Edm.String" Nullable="true" MaxLength="100"/>
+                <Property Name="Soup" Type="Edm.String" Nullable="true" MaxLength="100"/>
+                <Property Name="Vegan" Type="Edm.Boolean" Nullable="true"/>
+                <Property Name="Vegetarian" Type="Edm.Boolean" Nullable="true"/>
+                <Property Name="dateOfLunch" Type="Edm.DateTime" Nullable="false" sap:display-format="Date"/>
+                <Property Name="kcalForMain" Type="Edm.Int32" Nullable="true"/>
+                <NavigationProperty Name="Canteen" Relationship="canteen_menu.Menu_to_Canteen" FromRole="MenuDependent" ToRole="CanteenPrincipal"/>
+            </EntityType>
+            <Association Name="Menu_to_Canteen">
+                <End Type="canteen_menu.Menu" Multiplicity="*" Role="MenuDependent"/>
+                <End Type="canteen_menu.Canteen" Multiplicity="1" Role="CanteenPrincipal"/>
+                <ReferentialConstraint>
+                    <Principal Role="CanteenPrincipal">
+                        <PropertyRef Name="CanteenID"/>
+                    </Principal>
+                    <Dependent Role="MenuDependent">
+                        <PropertyRef Name="CanteenID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="CanteenmenuService" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="MenuSet" EntityType="canteen_menu.Menu"/>
+                <EntitySet Name="CanteenSet" EntityType="canteen_menu.Canteen"/>
+                <AssociationSet Name="MenuSet_to_CanteenSet" Association="canteen_menu.Menu_to_Canteen">
+                    <End EntitySet="MenuSet" Role="MenuDependent"/>
+                    <End EntitySet="CanteenSet" Role="CanteenPrincipal"/>
+                </AssociationSet>
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:edmx4="http://docs.oasis-open.org/odata/ns/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="com.sap.backend.carinfo" Alias="carinfo" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Reading">
+                <Key>
+                    <PropertyRef Name="ReadingID"/>
+                </Key>
+                <Property Name="ReadingID" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="VehicleID" Type="Edm.Int64" Nullable="false"/>
+                <Property Name="fillCost" Type="Edm.Decimal" Nullable="false" Precision="4" Scale="2"/>
+                <Property Name="fillDate" Type="Edm.DateTime" Nullable="false" sap:display-format="Date"/>
+                <Property Name="fillFuel" Type="Edm.Decimal" Nullable="false" Precision="4" Scale="2"/>
+                <Property Name="odometer" Type="Edm.Decimal" Nullable="false" Precision="10" Scale="2"/>
+                <NavigationProperty Name="Vehicle" Relationship="carinfo.Reading_to_Vehicle" FromRole="ReadingDependent" ToRole="VehiclePrincipal"/>
+            </EntityType>
+            <EntityType Name="Vehicle">
+                <Key>
+                    <PropertyRef Name="VehicleID"/>
+                </Key>
+                <Property Name="description" Type="Edm.String" Nullable="false" MaxLength="256"/>
+                <Property Name="reg" Type="Edm.String" Nullable="false" MaxLength="36"/>
+                <Property Name="startDate" Type="Edm.DateTime" Nullable="false" sap:display-format="Date"/>
+                <Property Name="startOdo" Type="Edm.Decimal" Nullable="false" Precision="10" Scale="2"/>
+                <Property Name="VehicleID" Type="Edm.Int64" Nullable="false"/>
+                <NavigationProperty Name="hasReadings" Relationship="carinfo.Reading_to_Vehicle" FromRole="VehiclePrincipal" ToRole="ReadingDependent"/>
+            </EntityType>
+            <Association Name="Reading_to_Vehicle">
+                <End Type="carinfo.Reading" Multiplicity="*" Role="ReadingDependent"/>
+                <End Type="carinfo.Vehicle" Multiplicity="1" Role="VehiclePrincipal"/>
+                <ReferentialConstraint>
+                    <Principal Role="VehiclePrincipal">
+                        <PropertyRef Name="VehicleID"/>
+                    </Principal>
+                    <Dependent Role="ReadingDependent">
+                        <PropertyRef Name="VehicleID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="CarinfoService" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="ReadingSet" EntityType="carinfo.Reading"/>
+                <EntitySet Name="VehicleSet" EntityType="carinfo.Vehicle"/>
+                <AssociationSet Name="ReadingSet_to_VehicleSet" Association="carinfo.Reading_to_Vehicle">
+                    <End EntitySet="ReadingSet" Role="ReadingDependent"/>
+                    <End EntitySet="VehicleSet" Role="VehiclePrincipal"/>
+                </AssociationSet>
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
